@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+jar {
+    baseName 'calculator'
+    version '1.0'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.6.0', ext: 'pom'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.6.0'
+
+    // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
