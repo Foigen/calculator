@@ -18,7 +18,7 @@ public class CalculationController {
     @GetMapping("/")
     @ApiOperation(value = "test option",response = BaseResponse.class)
     @ApiResponses(value={
-            @ApiResponse(code=200,message = "success")
+            @ApiResponse(code=CODE_SUCCESS,message = "success")
     })
     public BaseResponse showStatus() {
         return new BaseResponse(SUCCESS_STATUS, CODE_SUCCESS, Integer.MIN_VALUE);
@@ -27,8 +27,8 @@ public class CalculationController {
     @GetMapping("/sum")
     @ApiOperation(value = "Return the result of the addition",response = BaseResponse.class)
     @ApiResponses(value = {
-            @ApiResponse(code=200,message = "success"),
-            @ApiResponse(code=418,message = "error")
+            @ApiResponse(code=CODE_SUCCESS,message = SUCCESS_STATUS),
+            @ApiResponse(code=TEAPOT_FAILURE,message = ERROR_STATUS)
     })
     public BaseResponse sum(@RequestParam Integer first, @RequestParam Integer second) {
         return new BaseResponse(SUCCESS_STATUS, CODE_SUCCESS, first + second);
@@ -37,8 +37,8 @@ public class CalculationController {
     @GetMapping("/dif")
     @ApiOperation(value = "Return the result of the subtraction",response = BaseResponse.class)
     @ApiResponses(value = {
-            @ApiResponse(code=200,message = "success"),
-            @ApiResponse(code=418,message = "error")
+            @ApiResponse(code=CODE_SUCCESS,message = SUCCESS_STATUS),
+            @ApiResponse(code=TEAPOT_FAILURE,message = ERROR_STATUS)
     })
     public BaseResponse dif(@RequestParam Integer first, @RequestParam Integer second) {
         return new BaseResponse(SUCCESS_STATUS, CODE_SUCCESS, first - second);
@@ -47,8 +47,8 @@ public class CalculationController {
     @GetMapping("/prod")
     @ApiOperation(value = "Return the result of the multiplication",response = BaseResponse.class)
     @ApiResponses(value = {
-            @ApiResponse(code=200,message = "success"),
-            @ApiResponse(code=418,message = "error")
+            @ApiResponse(code=CODE_SUCCESS,message = SUCCESS_STATUS),
+            @ApiResponse(code=TEAPOT_FAILURE,message = ERROR_STATUS)
     })
     public BaseResponse prod(@RequestParam Integer first, @RequestParam Integer second) {
         return new BaseResponse(SUCCESS_STATUS, CODE_SUCCESS, first * second);
@@ -57,8 +57,8 @@ public class CalculationController {
     @GetMapping("/quot")
     @ApiOperation(value = "Return the result of the division",response = BaseResponse.class)
     @ApiResponses(value = {
-            @ApiResponse(code=200,message = "success"),
-            @ApiResponse(code=418,message = "error")
+            @ApiResponse(code=CODE_SUCCESS,message = SUCCESS_STATUS),
+            @ApiResponse(code=TEAPOT_FAILURE,message = ERROR_STATUS)
     })
     public BaseResponse quot(@RequestParam Integer first, @RequestParam Integer second) {
         return new BaseResponse(SUCCESS_STATUS, CODE_SUCCESS, first / second);

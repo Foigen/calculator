@@ -1,7 +1,8 @@
 package com.neoflextask;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+@ApiModel(description = "base response for calculator")
 public class BaseResponse {
     @ApiModelProperty(notes="request execution status")
     private final String status;
